@@ -1,0 +1,5 @@
+with tempfile.NamedTemporaryFile(prefix='name_of_model-', delete=False) as tmp:
+    temporary_filepath = tmp.name
+    model.save(temporary_filepath)
+    
+name_of_model = gensim.models.Word2Vec.load(temporary_filepath)
